@@ -1,0 +1,104 @@
+{
+  "entities": {
+    "VehicleDeal": {
+      "title": "Vehicle Deal Quote",
+      "description": "Represents a vehicle finance deal quote or stored vehicle details",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "car_name": {
+          "type": "string"
+        },
+        "reg": {
+          "type": "string"
+        },
+        "finance_type": {
+          "type": "string"
+        },
+        "vehicle_price": {
+          "type": "number"
+        },
+        "customer_deposit": {
+          "type": "number"
+        },
+        "dealer_deposit_contribution": {
+          "type": "number"
+        },
+        "trade_in_value": {
+          "type": "number"
+        },
+        "existing_settlement": {
+          "type": "number"
+        },
+        "term_months": {
+          "type": "number"
+        },
+        "annual_mileage": {
+          "type": "number"
+        },
+        "rate_type": {
+          "type": "string"
+        },
+        "quoted_rate": {
+          "type": "number"
+        },
+        "apr": {
+          "type": "number"
+        },
+        "flat_rate": {
+          "type": "number"
+        },
+        "balloon": {
+          "type": "number"
+        },
+        "fees": {
+          "type": "number"
+        },
+        "monthly_payment": {
+          "type": "number"
+        },
+        "total_interest": {
+          "type": "number"
+        },
+        "advance": {
+          "type": "number"
+        },
+        "isMyCar": {
+          "type": "boolean"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "car_name"
+      ]
+    },
+    "UserAppConfig": {
+      "title": "User Application Configuration",
+      "description": "User preferences like baseline car or currency",
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "firestore": {
+    "/deals/{dealId}": {
+      "schema": "VehicleDeal",
+      "description": "Stored vehicle finance quotes and deals"
+    },
+    "/app_state/{stateId}": {
+      "schema": "UserAppConfig",
+      "description": "Saved app settings and current state"
+    }
+  }
+}
